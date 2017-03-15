@@ -21,7 +21,6 @@ head(all_dat); tail(all_dat)
 dat <- subset(all_dat, Date > "2007-01-31" & Date < "2007-02-03")
 head(dat); tail(dat)
 #
-#title("Plot 1")
 par(mfrow=c(1,1),mar=c(4,4,4,4))
 #Convert Global_active_power from factor to numeric
 dat$Global_active_power <- as.numeric(levels(dat$Global_active_power))[dat$Global_active_power]
@@ -31,7 +30,5 @@ title(main = "Global Active Power")
 #Add Plot number
 mtext("Plot 1", side =3, adj = 0, line = 2.5, cex =1, font =1) 
 #Save to file
-dev.curl()
-dev.copy(png, file = "plot1.png")
+dev.copy(png, file = "plot1.png", width=480,height=480)
 dev.off()
-#

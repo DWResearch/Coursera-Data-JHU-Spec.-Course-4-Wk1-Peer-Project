@@ -39,7 +39,5 @@ points(dat$dateTime, dat$Sub_metering_3, col = "blue", type = "l")
 legend("topright", lwd=1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 mtext("Plot 3", side =3, adj = 0, line = 2.5, cex =1, font =1) 
 #Save to file
-dev.curl()
-dev.copy(png, file = "plot3.png")
+dev.copy(png, file = "plot3.png", width=480,height=480)
 dev.off()
-#

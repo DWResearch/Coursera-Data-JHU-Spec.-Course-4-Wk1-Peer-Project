@@ -30,11 +30,7 @@ dat$Sub_metering_2 <- as.numeric(levels(dat$Sub_metering_2))[dat$Sub_metering_2]
 dat$Sub_metering_3 <- as.numeric(levels(dat$Sub_metering_3))[dat$Sub_metering_2]
 dat$Voltage <- as.numeric(levels(dat$Voltage))[dat$Voltage]
 #
-#Plot 1
-#title("Plot 1")
-par(mfrow=c(1,1),mar=c(4,4,4,4))
-#Convert Global_active_power from factor to numeric
-#
+#Set parameters for 4 plots on one page
 par(mfrow=c(2,2),mar=c(4,4,4,4))
 #Plot upper left--first row, first column
 with(dat, plot(dateTime, Global_active_power, type="l", ylab = "Global Active Power (kilowatts)", xlab=" "))
@@ -52,6 +48,5 @@ legend("topright", lwd=1, col = c("black", "red", "blue"), legend = c("Sub_meter
 #Plot lower right--Second row, second column
 dat$Global_reactive_power <- as.numeric(levels(dat$Global_reactive_power))[dat$Global_reactive_power]
 with(dat, plot(dateTime, dat$Global_reactive_power, type ="l"))
-dev.curl()
-dev.copy(png, file = "plot4.png")
+dev.copy(png, file = "plot4.png", width=480,height=480)
 dev.off()

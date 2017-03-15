@@ -33,7 +33,5 @@ with(dat, plot(dateTime, Global_active_power, type="l", ylab = "Global Active Po
 #Add Plot number
 mtext("Plot 2", side =3, adj = 0, line = 2.5, cex =1, font =1) 
 #Save to file
-dev.curl()
-dev.copy(png, file = "plot2.png")
+dev.copy(png, file = "plot2.png", width=480,height=480)
 dev.off()
-#
